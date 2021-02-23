@@ -18,6 +18,11 @@ config :phoenixApp, PhoenixAppWeb.Endpoint,
   pubsub_server: PhoenixApp.PubSub,
   live_view: [signing_salt: "cN0MbOuz"]
 
+# Configuring migration using UUID (binary id)
+config :phoenixApp, PhoenixApp.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
