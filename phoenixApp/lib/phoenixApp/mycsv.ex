@@ -15,5 +15,5 @@ defmodule PhoenixApp.Mycsv do
     {:ok, %{result: sum}}
   end
 
-  defp handle_file({:error, _any}), do: {:error, "Invalid file"}
+  defp handle_file({:error, _any}), do: {:error, %{reason: "Invalid file"}}
 end
