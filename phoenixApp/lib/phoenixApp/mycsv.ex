@@ -9,7 +9,7 @@ defmodule PhoenixApp.Mycsv do
     sum =
       file
       |> String.split(",")
-      |> Enum.map(fn x -> String.to_integer(x) end)
+      |> Stream.map(fn x -> String.to_integer(x) end)
       |> Enum.sum()
 
     {:ok, %{result: sum}}
