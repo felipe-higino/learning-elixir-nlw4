@@ -7,7 +7,7 @@ defmodule PhoenixAppWeb.Router do
 
   scope "/api", PhoenixAppWeb do
     pipe_through :api
-    get "/", WelcomeController, :index
+    get "/:filename", WelcomeController, :index
   end
 
   # Enables LiveDashboard only for development
